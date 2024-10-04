@@ -11,6 +11,9 @@ export const i18n = createI18n({
           'basket': 'Корзина',
           'login': 'Авторизация'
         }
+      },
+      'btn':{
+        'bucket':'Корзина'
       }
     },
     en: {
@@ -20,6 +23,9 @@ export const i18n = createI18n({
           'basket': 'Basket',
           'login': 'Login'
         }
+      },
+      'btn':{
+        'bucket':'Корзина'
       }
     }
   }

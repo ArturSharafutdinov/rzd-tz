@@ -12,8 +12,8 @@
             {{ label }}
           </span>
 
-          <span class="absolute-top-right bucket-size__size">
-            5
+          <span v-if="bucketSize > 0" class="absolute-top-right bucket-size__size">
+            {{ bucketSize }}
           </span>
         </div>
       </template>
@@ -23,6 +23,7 @@
 <script setup lang="ts">
 
 import { i18n } from '@/locale/i18n'
+import { useBucketStore } from '@/stores/bucket.store'
 
 defineProps({
   label: {
@@ -31,6 +32,8 @@ defineProps({
     default: i18n.global.t('btn.bucket')
   }
 })
+
+const { bucketSize } = useBucketStore()
 
 </script>
 
@@ -53,7 +56,7 @@ defineProps({
   &__size {
     right: -5px;
     top: -5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     background-color: $red-6;
     padding: 2px 10px;
