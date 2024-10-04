@@ -1,39 +1,33 @@
-# rzd-tz
+ТЗ: Приложение электронная витрина
 
-This template should help get you started developing with Vue 3 in Vite.
+3 страницы:
 
-## Recommended IDE Setup
+1. Домашняя
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+1.1 Хедер
 
-## Type Support for `.vue` Imports in TS
+- Ссылка с логотипом :white_check_mark:
+- Ссылка для перехода в корзину 
+- Бейдж с количеством товаров в корзине
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1.2 Основной блок с данными
 
-## Customize configuration
+Сайдбар
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+-	селект со всеми категориями товаров и должен иметь опцию "Все категории" (выводится по умолчанию для показа всех товаров всех категорий)
+-	поля ввода для минимальной и максимальной цены. Максимальная цена не может быть меньше минимальной.
+-	кнопка подтверждения выполнения фильтрации "Применить". При нажатии на кнопку выполняется фильтрация товаров по категории, ценам и список товаров перерисовывается.
+-	кнопка сброса фильтров. При нажатии на данную кнопку очищается фильтр (возвращается к значениям по умолчанию).
 
-## Project Setup
 
-```sh
-npm install
-```
+Список карточек товара
 
-### Compile and Hot-Reload for Development
+-	изображение товара
+-	наименование товара
+-	кнопка добавления товара в корзину (при клике по кнопке товар добавляется в корзину)
 
-```sh
-npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
 
-```sh
-npm run build
-```
+2. Корзина
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+3. Авторизация
