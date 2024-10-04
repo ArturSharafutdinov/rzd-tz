@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { i18n } from '@/locale/i18n'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,7 +9,7 @@ const router = createRouter({
       path: '/',
       component: () => import('../views/home/Home.vue'),
       meta: {
-        label: 'Главная',
+        label: i18n.global.t('app.pages.home')
       }
     },
     {
@@ -16,7 +17,7 @@ const router = createRouter({
       path: '/basket',
       component: () => import('../views/basket/Basket.vue'),
       meta: {
-        label: 'Корзина',
+        label: i18n.global.t('app.pages.basket')
       }
     },
     {
@@ -24,7 +25,7 @@ const router = createRouter({
       path: '/login',
       component: () => import('../views/auth/Login.vue'),
       meta: {
-        label: 'Авторизация',
+        label: i18n.global.t('app.pages.login')
       }
     }
   ]
