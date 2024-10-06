@@ -48,6 +48,10 @@ router.beforeEach((to) => {
     return ROUTE_PATH.LOGIN
   }
 
+  if (to.path === ROUTE_PATH.LOGIN && isAuthenticated) {
+    return ROUTE_PATH.HOME
+  }
+
 })
 
 export default router
