@@ -2,7 +2,7 @@
   <q-dialog v-model="openDialog">
     <q-card>
       <q-card-section class="text-h5 bg-primary text-white">
-        {{ $t('basket.order.success') }}
+        {{ $t('basket.order.success', [ getRandomOrderNumber() ]) }}
       </q-card-section>
       <q-card-actions class="bg-primary text-white" align="right">
         <q-btn color="warning" @click="emit('closeDialog')">{{ $t('btn.close') }}</q-btn>
@@ -16,5 +16,9 @@
 const emit = defineEmits([ 'closeDialog' ])
 
 const openDialog = defineModel<boolean>()
+
+const getRandomOrderNumber = () => {
+  return `№${Math.floor(Math.random() * 10000)}`;
+}
 
 </script>
