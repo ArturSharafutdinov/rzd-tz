@@ -95,7 +95,7 @@ const basketStore = useBasketStore()
 
 const basket = computed<Map<Product, number>>(() => basketStore.basket)
 const basketSize = computed<number>(() => basketStore.basketSize)
-const totalPrice = computed<string>(() => basketStore.totalPrice + '$')
+const totalPrice = computed<string>(() => basketStore.totalPrice.toFixed(2) + '$')
 
 const basketKeys = computed<Product[]>(() => [ ...basketStore.basket.keys() ])
 
