@@ -6,6 +6,7 @@ import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/rzd-tz/',
   plugins: [
     vue({ template: { transformAssetUrls } }),
     quasar({ sassVariables: 'src/styles/quasar-variables.scss' })
