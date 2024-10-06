@@ -20,7 +20,7 @@
       class="absolute-bottom-right q-mr-md q-mb-md"
       @click="emit('addProduct', product)"
     >
-      {{ $t('btn.addToBucket') }}
+      {{ $t('btn.addToBasket') }}
     </q-btn>
     <div class="absolute-bottom-left q-ml-md q-mb-md text-grey-7">
       {{ $t(`categories.${ product.category.replaceAll('\'', '') }`) }}

@@ -7,13 +7,13 @@
     >
       <template #default>
         <div class="relative-position flex column justify-center items-center q-px-md">
-          <q-icon name="mdi-bucket-outline" size="md" />
-          <span class="bucket-size__label">
+          <q-icon name="mdi-basket" size="md" />
+          <span class="basket-size__label">
             {{ label }}
           </span>
 
-          <span v-if="bucketSize > 0" class="absolute-top-right bucket-size__size">
-            {{ bucketSize }}
+          <span v-if="basketSize > 0" class="absolute-top-right basket-size__size">
+            {{ basketSize }}
           </span>
         </div>
       </template>
@@ -23,20 +23,20 @@
 <script setup lang="ts">
 
 import { i18n } from '@/locale/i18n'
-import { useBucketStore } from '@/stores/bucket.store'
+import { useBasketStore } from '@/stores/basket.store'
 import { computed } from 'vue'
 
 defineProps({
   label: {
     type: String,
     required: false,
-    default: i18n.global.t('btn.bucket')
+    default: i18n.global.t('btn.basket')
   }
 })
 
-const bucketStore = useBucketStore()
+const basketStore = useBasketStore()
 
-const bucketSize = computed<number>(() => bucketStore.bucketSize)
+const basketSize = computed<number>(() => basketStore.basketSize)
 
 </script>
 
@@ -44,7 +44,7 @@ const bucketSize = computed<number>(() => bucketStore.bucketSize)
 
 @import '@/styles/quasar-variables.scss';
 
-.bucket-size {
+.basket-size {
   font-size: 16px;
   background-color: black;
   color: white;

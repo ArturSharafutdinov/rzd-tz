@@ -11,7 +11,7 @@
 
       <q-space />
 
-      <bucket-button class="full-height q-py-xs" :to="ROUTE_PATH.BASKET" />
+      <basket-button class="full-height q-py-xs" :to="ROUTE_PATH.BASKET" />
     </q-toolbar>
   </q-header>
 </template>
@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import { ROUTE_PATH } from '@/router'
 import { useRouter } from 'vue-router'
-import BucketButton from '@/components/buttons/BucketButton.vue'
+import BasketButton from '@/components/buttons/BasketButton.vue'
 
 const title = import.meta.env.VITE_APP_TITLE
 

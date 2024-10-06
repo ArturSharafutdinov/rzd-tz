@@ -13,8 +13,8 @@ export const i18n = createI18n({
         }
       },
       'btn': {
-        'bucket': 'Корзина',
-        'addToBucket': 'В корзину',
+        'basket': 'Корзина',
+        'addToBasket': 'В корзину',
         'clear': 'Сброс',
         'apply': 'Применить'
       },
@@ -42,8 +42,8 @@ export const i18n = createI18n({
       },
       'products': {
         'loading': 'Загрузка продукции',
-        'bucketSuccess': 'Продукт добавлен в корзину',
-        'bucketFail': 'Ошибка при добавлении продукта в корзину'
+        'basketSuccess': 'Продукт добавлен в корзину',
+        'basketFail': 'Ошибка при добавлении продукта в корзину'
       }
     }
   }

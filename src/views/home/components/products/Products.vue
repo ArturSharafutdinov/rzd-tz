@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 
-import { useBucketStore } from '@/stores/bucket.store'
+import { useBasketStore } from '@/stores/basket.store'
 import { NOTIFY_COLORS, useNotify } from '@/composables/useNotify'
 import { computed } from 'vue'
 import type { Product } from '@/model/product'
@@ -38,10 +38,10 @@ const products = computed<Product[]>(() => productStore.products)
 const isProductsLoading = computed<boolean>(() => productStore.isProductsLoading)
 
 // Bucket
-const bucketStore = useBucketStore()
+const basketStore = useBasketStore()
 
 const addProduct = (product: Product) => {
-  bucketStore.addToBucket(product) ? addNotify(i18n.global.t('products.bucketSuccess')) : addNotify(i18n.global.t('products.bucketFail'), 'top', NOTIFY_COLORS.ERROR)
+  basketStore.addToBasket(product) ? addNotify(i18n.global.t('products.basketSuccess')) : addNotify(i18n.global.t('products.basketFail'), 'top', NOTIFY_COLORS.ERROR)
 }
 
 </script>
