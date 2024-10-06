@@ -1,4 +1,5 @@
 <template>
+  <div class="text-h5 q-ml-xl">{{ currentCategory }}</div>
   <q-table
     :rows="products"
     :loading="isProductsLoading"
@@ -37,6 +38,8 @@ productStore.getAllProducts()
 
 const products = computed<Product[]>(() => productStore.products)
 const isProductsLoading = computed<boolean>(() => productStore.isProductsLoading)
+
+const currentCategory = computed<string>(() => i18n.global.t(`categories.${ productStore.currentCategory.replaceAll('\'', '') }`))
 
 // Basket
 const basketStore = useBasketStore()

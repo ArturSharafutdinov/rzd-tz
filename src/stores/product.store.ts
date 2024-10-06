@@ -15,9 +15,11 @@ export const useProductStore = defineStore('product', () => {
   const { addNotify } = useNotify()
 
   const filter = reactive<ProductFilter>(new ProductFilter())
+  const currentCategory = ref<string>(ProductFilter.CATEGORY_ALL)
 
   const applyFilter = () => {
     getAllProducts(filter)
+    currentCategory.value = filter.category
   }
 
   const clearFilter = () => {
@@ -78,6 +80,7 @@ export const useProductStore = defineStore('product', () => {
     getAllProducts,
 
     filter,
+    currentCategory,
     applyFilter,
     clearFilter,
 

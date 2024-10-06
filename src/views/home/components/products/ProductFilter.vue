@@ -29,7 +29,7 @@
       </q-card-actions>
     </q-card>
   </q-drawer>
-  <q-btn v-if="!drawer" class="absolute-top-left" flat icon="mdi-arrow-right" style="margin-top: 80px; z-index: 1"
+  <q-btn v-if="!drawer" class="absolute-top-left open-filter-btn" flat icon="mdi-arrow-right"
          @click="drawer = true" />
 </template>
 <script setup lang="ts">
@@ -47,3 +47,12 @@ const productStore = useProductStore()
 const { filter } = storeToRefs(productStore)
 
 </script>
+
+<style scoped lang="scss">
+
+.open-filter-btn {
+  margin-top: 90px;
+  z-index: 1
+}
+
+</style>
