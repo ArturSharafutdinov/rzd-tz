@@ -18,6 +18,9 @@ export const useBasketStore = defineStore('basket', {
       })
 
       return total
+    },
+    isEmpty(state) {
+      return state.basket.size === 0
     }
   },
   actions: {

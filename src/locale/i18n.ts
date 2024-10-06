@@ -18,7 +18,8 @@ export const i18n = createI18n({
         'clear': 'Сброс',
         'apply': 'Применить',
         'close': 'Закрыть',
-        'makeOrder': 'Оформить заказ'
+        'makeOrder': 'Оформить заказ',
+        'backHome': 'Вернуться к покупкам'
       },
       'categories': {
         'electronics': 'Электроника',
@@ -61,7 +62,8 @@ export const i18n = createI18n({
         },
         'order': {
           'success': 'Вы успешно оформили заказ!'
-        }
+        },
+        'empty': 'Корзина пуста'
       }
     }
   }
