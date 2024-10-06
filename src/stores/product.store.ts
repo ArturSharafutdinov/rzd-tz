@@ -2,8 +2,8 @@ import { defineStore } from 'pinia'
 import axios from 'axios'
 import { reactive, ref } from 'vue'
 import { useNotify } from '@/composables/useNotify'
-import { inRange } from '@/utils/math.util'
 import { type Product, ProductFilter } from '@/model/product'
+import { inRange } from '@/utils/math.util'
 
 const PRODUCT_API = {
   ALL: '/products',
@@ -14,26 +14,21 @@ export const useProductStore = defineStore('product', () => {
 
   const { addNotify } = useNotify()
 
-  const products = ref<Product[]>([])
-  const isProductsLoading = ref<boolean>(false)
-
-  const getAllProducts = () => {
-    isProductsLoading.value = true
-    axios.get(import.meta.env.VITE_APP_API_URL + PRODUCT_API.ALL)
-      .then((response) => {
-        products.value = response.data
-      })
-      .catch((e) => {
-        addNotify(e)
-      })
-      .finally(() => {
-        isProductsLoading.value = false
-      })
-  }
-
   const filter = reactive<ProductFilter>(new ProductFilter())
 
   const applyFilter = () => {
+    getAllProducts(filter)
+  }
+
+  const clearFilter = () => {
+    Object.assign(filter, ProductFilter.defaultState())
+    getAllProducts()
+  }
+
+  const products = ref<Product[]>([])
+  const isProductsLoading = ref<boolean>(false)
+
+  const filterProducts = () => {
     products.value = products.value.filter(product => {
 
       let passFilter = true
@@ -48,9 +43,22 @@ export const useProductStore = defineStore('product', () => {
     })
   }
 
-  const clearFilter = () => {
-    Object.assign(filter, ProductFilter.defaultState())
-    getAllProducts()
+  const getAllProducts = (filter?: ProductFilter) => {
+    isProductsLoading.value = true
+    axios.get(import.meta.env.VITE_APP_API_URL + PRODUCT_API.ALL)
+      .then((response) => {
+        products.value = response.data
+
+        if(filter) {
+          filterProducts()
+        }
+      })
+      .catch((e) => {
+        addNotify(e)
+      })
+      .finally(() => {
+        isProductsLoading.value = false
+      })
   }
 
   const categories = ref<string[]>([])

@@ -4,6 +4,7 @@
     :loading="isProductsLoading"
     :loading-label="$t('products.loading')"
     :rows-per-page-options="[0]"
+    :no-data-label="$t('products.noData')"
     hide-pagination
     grid
     class="fit"

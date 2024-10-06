@@ -20,11 +20,12 @@
         <price-input
           v-model:min-price.number="filter.price.min"
           v-model:max-price.number="filter.price.max"
+          @validation="(v) => validated = v"
         />
       </q-card-section>
       <q-card-actions vertical>
         <q-btn class="q-mx-sm q-my-sm" @click="productStore.clearFilter()">{{ $t('btn.clear') }}</q-btn>
-        <q-btn color="primary" class="q-mx-sm" @click="productStore.applyFilter()">{{ $t('btn.apply') }}</q-btn>
+        <q-btn :disable="!validated" color="primary" class="q-mx-sm" @click="productStore.applyFilter()">{{ $t('btn.apply') }}</q-btn>
       </q-card-actions>
     </q-card>
   </q-drawer>
@@ -39,6 +40,7 @@ import { useProductStore } from '@/stores/product.store'
 import { storeToRefs } from 'pinia'
 
 const drawer = ref(true)
+const validated = ref(true)
 
 const productStore = useProductStore()
 

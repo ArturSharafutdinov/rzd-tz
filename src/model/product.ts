@@ -27,7 +27,7 @@ export class ProductFilter {
   }
 
   static MIN_PRICE = 0
-  static MAX_PRICE = 1000
+  static MAX_PRICE = 1000000
   static CATEGORY_ALL = 'all'
 
   static defaultState = (): ProductFilter => {
