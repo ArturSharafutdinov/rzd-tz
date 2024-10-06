@@ -14,11 +14,12 @@ import { ProductFilter } from '@/model/product'
 
 const emit = defineEmits([ 'validation' ])
 
-const minPrice = defineModel('minPrice', { required: true })
-const maxPrice = defineModel('maxPrice', { required: true })
+const minPrice = defineModel<number>('minPrice', { required: true })
+const maxPrice = defineModel<number>('maxPrice', { required: true })
 
 const showErrorMessage = ref<boolean>(false)
 
+// @ts-ignore
 watch([ minPrice, maxPrice ], (newVal: number[]) => {
   showErrorMessage.value = newVal[0] > newVal[1]
   emit('validation', (newVal[0] ?? ProductFilter.MIN_PRICE) <= (newVal[1] ?? ProductFilter.MAX_PRICE))

@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 
-const model = defineModel()
+const model = defineModel<string>()
 
 defineProps({
   label: String,

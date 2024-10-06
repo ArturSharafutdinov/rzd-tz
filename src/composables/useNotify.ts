@@ -8,7 +8,18 @@ export const NOTIFY_COLORS = {
 export const useNotify = () => {
   const $q = useQuasar()
 
-  const addNotify = (message: string, position = 'top', color = NOTIFY_COLORS.WARNING, textColor = 'white') => {
+  const addNotify = (message: string,
+                     position: | 'top-left'
+                       | 'top-right'
+                       | 'bottom-left'
+                       | 'bottom-right'
+                       | 'top'
+                       | 'bottom'
+                       | 'left'
+                       | 'right'
+                       | 'center' = 'top',
+                     color = NOTIFY_COLORS.WARNING,
+                     textColor = 'white') => {
     $q.notify({
       message: message,
       position: position,

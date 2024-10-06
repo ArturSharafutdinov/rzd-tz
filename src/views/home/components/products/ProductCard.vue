@@ -23,17 +23,18 @@
       {{ $t('btn.addToBasket') }}
     </q-btn>
     <div class="absolute-bottom-left q-ml-md q-mb-md text-grey-7">
-      {{ $t(`categories.${ product.category.replaceAll('\'', '') }`) }}
+      {{ productCategory }}
     </div>
   </q-card>
 </template>
 
 <script setup lang="ts">
 
-import type { PropType } from 'vue'
+import { computed, type PropType } from 'vue'
 import type { Product } from '@/model/product'
+import { i18n } from '@/locale/i18n'
 
-defineProps({
+const props = defineProps({
   product: {
     type: Object as PropType<Product>,
     required: false,
@@ -44,6 +45,9 @@ defineProps({
 const emit = defineEmits([
   'addProduct'
 ])
+
+// @ts-ignore
+const productCategory = computed<string>(() => i18n.global.t(`categories.${ props.product?.category.replaceAll('\'', '') }`))
 
 </script>
 

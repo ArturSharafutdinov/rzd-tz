@@ -53,25 +53,39 @@ import BasketProductCard from '@/views/basket/components/BasketProductCard.vue'
 import { useBasketStore } from '@/stores/basket.store'
 import { computed } from 'vue'
 import type { Product } from '@/model/product'
+import type { QTableColumn } from 'quasar'
 import { i18n } from '@/locale/i18n'
 
-const COLUMNS = [
+const COLUMNS: QTableColumn[] = [
   {
     name: 'index',
     label: '№',
+    align: 'left',
     field: 'index'
   },
   {
-    name: 'name', label: i18n.global.t('basket.table.columns.name'), align: 'left'
+    name: 'name',
+    label: i18n.global.t('basket.table.columns.name'),
+    align: 'left',
+    field: 'name'
   },
   {
-    name: 'quantity', label: i18n.global.t('basket.table.columns.quantity'), align: 'left'
+    name: 'quantity',
+    label: i18n.global.t('basket.table.columns.quantity'),
+    align: 'left',
+    field: 'quantity'
   },
   {
-    name: 'price', field: 'price', label: i18n.global.t('basket.table.columns.price'), align: 'left'
+    name: 'price',
+    label: i18n.global.t('basket.table.columns.price'),
+    align: 'left',
+    field: 'price'
   },
   {
-    name: 'summary', label: i18n.global.t('basket.table.columns.summary'), align: 'left'
+    name: 'summary',
+    label: i18n.global.t('basket.table.columns.summary'),
+    align: 'left',
+    field: 'summary'
   }
 ]
 

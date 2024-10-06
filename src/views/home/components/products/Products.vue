@@ -39,6 +39,7 @@ productStore.getAllProducts()
 const products = computed<Product[]>(() => productStore.products)
 const isProductsLoading = computed<boolean>(() => productStore.isProductsLoading)
 
+// @ts-ignore
 const currentCategory = computed<string>(() => i18n.global.t(`categories.${ productStore.currentCategory.replaceAll('\'', '') }`))
 
 // Basket

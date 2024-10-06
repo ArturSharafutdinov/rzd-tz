@@ -51,6 +51,7 @@ const isLogging = computed<boolean>(() => securityStore.isLogging)
 
 const isValidForm = ref<boolean>(false)
 
+// @ts-ignore
 watch([ email, password ], (newVal: string[]) => {
 
   let isValid = true
