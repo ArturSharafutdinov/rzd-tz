@@ -24,6 +24,7 @@
 
 import { i18n } from '@/locale/i18n'
 import { useBucketStore } from '@/stores/bucket.store'
+import { computed } from 'vue'
 
 defineProps({
   label: {
@@ -33,7 +34,9 @@ defineProps({
   }
 })
 
-const { bucketSize } = useBucketStore()
+const bucketStore = useBucketStore()
+
+const bucketSize = computed<number>(() => bucketStore.bucketSize)
 
 </script>
 

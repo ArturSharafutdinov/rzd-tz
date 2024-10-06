@@ -3,12 +3,12 @@
     <app-header />
 
     <q-page-container>
-      Page
+      <router-view />
     </q-page-container>
 
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import AppHeader from '@/components/app/header/AppHeader.vue'
+import AppHeader from '@/views/home/components/header/AppHeader.vue'
 </script>

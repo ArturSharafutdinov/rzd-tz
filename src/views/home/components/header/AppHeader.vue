@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import { ROUTE_PATH } from '@/router'
 import { useRouter } from 'vue-router'
-import BucketButton from '@/components/app/buttons/BucketButton.vue'
+import BucketButton from '@/components/buttons/BucketButton.vue'
 
 const title = import.meta.env.VITE_APP_TITLE
 

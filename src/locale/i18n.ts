@@ -2,7 +2,7 @@ import { createI18n } from 'vue-i18n'
 
 export const i18n = createI18n({
   locale: 'ru',
-  fallbackLocale: 'en',
+  fallbackLocale: 'ru',
   messages: {
     ru: {
       'app': {
@@ -12,20 +12,38 @@ export const i18n = createI18n({
           'login': 'Авторизация'
         }
       },
-      'btn':{
-        'bucket':'Корзина'
-      }
-    },
-    en: {
-      'app': {
-        'pages': {
-          'home': 'Home',
-          'basket': 'Basket',
-          'login': 'Login'
+      'btn': {
+        'bucket': 'Корзина',
+        'addToBucket': 'В корзину',
+        'clear': 'Сброс',
+        'apply': 'Применить'
+      },
+      'categories': {
+        'electronics': 'Электроника',
+        'jewelery': 'Ювелирные изделия',
+        'mens clothing': 'Мужская одежда',
+        'womens clothing': 'Женская одежда',
+        'all': 'Все категории'
+      },
+      'input': {
+        'category': {
+          'label': 'Выберите категорию'
+        },
+        'price': {
+          'min': 'Мин.цена',
+          'max': 'Макс.цена',
+          'label': 'Значение'
         }
       },
-      'btn':{
-        'bucket':'Корзина'
+      'filter': {
+        'title': 'Фильтр',
+        'category': 'Категория',
+        'price': 'Цена'
+      },
+      'products': {
+        'loading': 'Загрузка продукции',
+        'bucketSuccess': 'Продукт добавлен в корзину',
+        'bucketFail': 'Ошибка при добавлении продукта в корзину'
       }
     }
   }
