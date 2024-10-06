@@ -5,6 +5,7 @@
       v-model="price"
       :label="$t('input.price.label')"
       outlined
+      type="number"
     />
   </div>
 </template>
