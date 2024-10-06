@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { i18n } from '@/locale/i18n'
+import { useSecurityStore } from '@/stores/security.store'
 
 export const ROUTE_PATH = {
   HOME: '/',
@@ -35,6 +36,18 @@ const router = createRouter({
       }
     }
   ]
+})
+
+router.beforeEach((to) => {
+
+  const securityStore = useSecurityStore()
+
+  const isAuthenticated = securityStore.isAuthenticated
+
+  if(to.path !== ROUTE_PATH.LOGIN && !isAuthenticated) {
+    return ROUTE_PATH.LOGIN
+  }
+
 })
 
 export default router

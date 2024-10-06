@@ -11,7 +11,8 @@
 
       <q-space />
 
-      <basket-button class="full-height q-py-xs" :to="ROUTE_PATH.BASKET" />
+      <basket-button v-if="isAuthenticated" class="full-height q-py-xs" :to="ROUTE_PATH.BASKET" />
+      <logout-button v-if="isAuthenticated" class="q-py-xs q-ml-md"/>
     </q-toolbar>
   </q-header>
 </template>
@@ -20,6 +21,9 @@
 import { ROUTE_PATH } from '@/router'
 import { useRouter } from 'vue-router'
 import BasketButton from '@/components/buttons/BasketButton.vue'
+import { useSecurityStore } from '@/stores/security.store'
+import { computed } from 'vue'
+import LogoutButton from '@/components/buttons/LogoutButton.vue'
 
 const title = import.meta.env.VITE_APP_TITLE
 
@@ -28,6 +32,9 @@ const router = useRouter()
 const goHome = () => {
   router.push(ROUTE_PATH.HOME)
 }
+
+const securityStore = useSecurityStore()
+const isAuthenticated = computed<boolean>(() => securityStore.isAuthenticated)
 
 </script>
 

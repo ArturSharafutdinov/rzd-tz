@@ -19,7 +19,9 @@ export const i18n = createI18n({
         'apply': 'Применить',
         'close': 'Закрыть',
         'makeOrder': 'Оформить заказ',
-        'backHome': 'Вернуться к покупкам'
+        'backHome': 'Вернуться к покупкам',
+        'login': 'Войти',
+        'logout': 'Выйти'
       },
       'categories': {
         'electronics': 'Электроника',
@@ -36,7 +38,11 @@ export const i18n = createI18n({
           'min': 'Мин.цена',
           'max': 'Макс.цена',
           'label': 'Значение'
-        }
+        },
+        'email': 'Почта',
+        'enterEmail': 'Введите',
+        'password': 'Пароль',
+        'enterPassword': 'Введите пароль'
       },
       'filter': {
         'title': 'Фильтр',
@@ -64,6 +70,14 @@ export const i18n = createI18n({
           'success': 'Вы успешно оформили заказ {0}!'
         },
         'empty': 'Корзина пуста'
+      },
+      'login': {
+        'title': 'Форма авторизации',
+        'failed': 'Пользователь не найден'
+      },
+      'rules': {
+        'email': 'Неверный формат почты',
+        'empty': 'Поле не может быть пустым'
       }
     }
   }
