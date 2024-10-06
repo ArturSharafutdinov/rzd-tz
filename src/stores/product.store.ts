@@ -38,8 +38,6 @@ export const useProductStore = defineStore('product', () => {
 
       let passFilter = true
 
-      console.log(product.title, product.category, filter.category)
-
       if(filter.category !== ProductFilter.CATEGORY_ALL) {
         passFilter = passFilter && (product.category === filter.category)
       }

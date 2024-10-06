@@ -16,7 +16,9 @@ export const i18n = createI18n({
         'basket': 'Корзина',
         'addToBasket': 'В корзину',
         'clear': 'Сброс',
-        'apply': 'Применить'
+        'apply': 'Применить',
+        'close': 'Закрыть',
+        'makeOrder': 'Оформить заказ'
       },
       'categories': {
         'electronics': 'Электроника',
@@ -44,6 +46,22 @@ export const i18n = createI18n({
         'loading': 'Загрузка продукции',
         'basketSuccess': 'Продукт добавлен в корзину',
         'basketFail': 'Ошибка при добавлении продукта в корзину'
+      },
+      'basket': {
+        'table': {
+          'title': 'Товары в корзине',
+          'columns': {
+            'name': 'Наименование товара',
+            'quantity': 'Количество',
+            'price': 'Цена за ед.',
+            'summary': 'Итого'
+          },
+          'summary': 'Всегоа товаров {0} на сумму {1}',
+          'noData': 'Корзина пуста'
+        },
+        'order': {
+          'success': 'Вы успешно оформили заказ!'
+        }
       }
     }
   }

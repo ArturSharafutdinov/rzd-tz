@@ -37,7 +37,7 @@ productStore.getAllProducts()
 const products = computed<Product[]>(() => productStore.products)
 const isProductsLoading = computed<boolean>(() => productStore.isProductsLoading)
 
-// Bucket
+// Basket
 const basketStore = useBasketStore()
 
 const addProduct = (product: Product) => {
