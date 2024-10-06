@@ -5,7 +5,7 @@
         {{ $t('login.title') }}
       </q-card-section>
       <q-card-section>
-        <q-form>
+        <q-form @keydown.enter="login">
           <input-text
             v-model="email"
             :label="$t('input.email')"
@@ -44,7 +44,7 @@ const email = ref<string>()
 const password = ref<string>()
 
 const login = () => {
-  securityStore.login(email.value ?? '', password.value ?? '')
+  isValidForm.value && securityStore.login(email.value ?? '', password.value ?? '')
 }
 
 const isLogging = computed<boolean>(() => securityStore.isLogging)

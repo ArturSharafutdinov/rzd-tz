@@ -1,5 +1,5 @@
 <template>
-  <div class="text-h5 q-ml-xl">{{ currentCategory }}</div>
+  <div class="text-h4 q-ml-xl">{{ currentCategory }}</div>
   <q-table
     :rows="products"
     :loading="isProductsLoading"
